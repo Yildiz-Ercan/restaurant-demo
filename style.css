@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  gap: 10px;
+
+  /*linear-gradient(rgba(value, value, value, transparency..), rgba(..)) 
+   erzeugt einen Farbverlauf und ist praktisch wenn man Bilder überdecken möchte.
+  */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../restaurant-demo/pictures/hero.jpg");
+
+  background-size: cover;
+  /*background-positon legt den Bildausschnitt fest*/
+  background-position: center;
+  /*background-repeat soll das bild wiederholt werden?*/
+  background-repeat: no-repeat;
+}
+
+.hero_content h1 {
+  font-family: "Lobster", sans-serif;
+  line-height: 3rem;
+  font-size: 3rem;
+}
+
+.hero_content p {
+  font-size: 1rem;
+  color: lightgray;
+}
+
+.hero_content a {
+  font-size: 1rem;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  color: white;
+  background-color: red;
+  text-decoration: none;
+  border: 2px solid red;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero_content a:hover {
+  background-color: transparent;
+  color: red;
+}
+
+@media only screen and (min-width: 600px) {
+  .hero_content h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .hero_content p {
+    font-size: 1.2rem;
+  }
+
+  .hero_content a {
+    padding: 1.5rem 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .hero_content h1 {
+    font-size: 6rem;
+    line-height: 6.5rem;
+  }
+  .hero_content p {
+    font-size: 1.5rem;
+  }
+}
