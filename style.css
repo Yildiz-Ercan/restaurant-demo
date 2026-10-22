@@ -15,6 +15,19 @@ html {
   --text-color: lightgray;
 }
 
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 1rem 0 1rem 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--primary-color);
+  width: fit-content;
+}
+
 main {
   background-color: #1a1a1a;
   color: white;
@@ -111,11 +124,6 @@ main {
   height: 300vh;
 }
 
-.container {
-  max-width: 85%;
-  margin: 0 auto;
-}
-
 .about {
   display: flex;
   flex-direction: column;
@@ -137,14 +145,6 @@ main {
   align-items: flex-start;
   padding: 0.75rem;
   gap: 0.5rem;
-}
-
-.about_content h2 {
-  margin: 1rem 0 1rem 0;
-  font-size: 2rem;
-  text-transform: uppercase;
-  border-bottom: 2px solid var(--primary-color);
-  width: fit-content;
 }
 
 .about_content p {
@@ -211,6 +211,44 @@ main {
   background-repeat: no-repeat;
 }
 
+.openingHours {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50vh;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../restaurant-demo/pictures/info.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.openingHours_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.openingHours_table th {
+  color: var(--text-color);
+  text-align: left;
+  padding-right: 9.5rem;
+}
+
+.openingHours_table td {
+  color: white;
+}
+
+.openingHours_content .closed {
+  text-align: right;
+}
+
 @media only screen and (min-width: 600px) {
   .navbar a {
     font-size: 1.2rem;
@@ -239,7 +277,7 @@ main {
     align-items: center;
   }
 
-  .about_content h2 {
+  .about_content .heading {
     font-size: 2rem;
   }
 
@@ -282,7 +320,7 @@ main {
     align-items: center;
   }
 
-  .about_content h2 {
+  .about_content .heading {
     font-size: 4rem;
   }
 
@@ -293,5 +331,13 @@ main {
   .picturesArea {
     height: 60vh;
     align-self: center;
+  }
+
+  .openingHours_content .heading {
+    font-size: 2.5rem;
+  }
+
+  .openingHours_table th {
+    padding-right: 14rem;
   }
 }
