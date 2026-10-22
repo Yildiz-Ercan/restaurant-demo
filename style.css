@@ -236,18 +236,15 @@ main {
   .about {
     display: flex;
     flex-direction: row;
-  }
-
-  .about_content {
-    margin: 1.5rem 2rem 0 2rem;
+    align-items: center;
   }
 
   .about_content h2 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .about_content p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .about_content .button {
@@ -256,7 +253,7 @@ main {
   }
 
   .picturesArea {
-    height: 60vh;
+    height: 50vh;
     align-self: center;
   }
 }
@@ -285,12 +282,12 @@ main {
     align-items: center;
   }
 
-  .about_content {
-    margin: 2rem 3rem 0 3rem;
-  }
-
   .about_content h2 {
     font-size: 4rem;
+  }
+
+  .about_content p {
+    font-size: 1.2rem;
   }
 
   .picturesArea {
