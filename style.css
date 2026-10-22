@@ -3,6 +3,7 @@
 
 html {
   overflow-x: clip;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -11,6 +12,12 @@ html {
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
   --primary-color: #ff3030;
+  --text-color: lightgray;
+}
+
+main {
+  background-color: #1a1a1a;
+  color: white;
 }
 
 .navbar {
@@ -63,17 +70,12 @@ html {
   color: white;
   gap: 10px;
 
-  /*linear-gradient(rgba(value, value, value, transparency..), rgba(..)) 
-   erzeugt einen Farbverlauf und ist praktisch wenn man Bilder überdecken möchte.
-  */
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../restaurant-demo/pictures/hero.jpg");
 
   background-size: cover;
-  /*background-positon legt den Bildausschnitt fest*/
   background-position: center;
-  /*background-repeat soll das bild wiederholt werden?*/
   background-repeat: no-repeat;
 }
 
@@ -85,10 +87,10 @@ html {
 
 .hero_content p {
   font-size: 1rem;
-  color: lightgray;
+  color: var(--text-color);
 }
 
-.hero_content a {
+.button {
   font-size: 1rem;
   margin-top: 2rem;
   padding: 1rem 2rem;
@@ -100,7 +102,7 @@ html {
   transition: all 0.2s ease-in-out;
 }
 
-.hero_content a:hover {
+.button:hover {
   background-color: transparent;
   color: var(--primary-color);
 }
@@ -109,7 +111,115 @@ html {
   height: 300vh;
 }
 
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.about_content,
+.picturesArea {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+.about_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.75rem;
+  gap: 0.5rem;
+}
+
+.about_content h2 {
+  margin: 1rem 0 1rem 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--primary-color);
+  width: fit-content;
+}
+
+.about_content p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+.about_content .button {
+  font-size: 0.8rem;
+  padding: 0.6rem 1rem;
+  margin-top: 0.5rem;
+  width: fit-content;
+}
+
+.picturesArea {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  gap: 1rem;
+}
+
+.picturesArealeft,
+.picturesAreaRight {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+.picturesArealeft {
+  display: flex;
+  background-image: url("../restaurant-demo/pictures/about-1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.picturesAreaRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.picturesAreaRightChild1,
+.picturesAreaRightChild2 {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+.picturesAreaRightChild1 {
+  display: flex;
+  background-image: url("../restaurant-demo/pictures/about-2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.picturesAreaRightChild2 {
+  display: flex;
+  background-image: url("../restaurant-demo/pictures/about-3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @media only screen and (min-width: 600px) {
+  .navbar a {
+    font-size: 1.2rem;
+  }
+
+  .navbar div {
+    gap: 1.5rem;
+  }
+
   .hero_content h1 {
     font-size: 4rem;
     line-height: 4rem;
@@ -119,20 +229,47 @@ html {
     font-size: 1.2rem;
   }
 
-  .hero_content a {
+  .hero_content .button {
     padding: 1.5rem 2.5rem;
   }
 
-  .navbar a {
-    font-size: 1.2rem;
+  .about {
+    display: flex;
+    flex-direction: row;
   }
 
-  .navbar div {
-    gap: 1.5rem;
+  .about_content {
+    margin: 1.5rem 2rem 0 2rem;
+  }
+
+  .about_content h2 {
+    font-size: 3rem;
+  }
+
+  .about_content p {
+    font-size: 1rem;
+  }
+
+  .about_content .button {
+    font-size: 1.2rem;
+    padding: 0.5rem 2rem;
+  }
+
+  .picturesArea {
+    height: 60vh;
+    align-self: center;
   }
 }
 
 @media only screen and (min-width: 1000px) {
+  .navbar a {
+    font-size: 1.5rem;
+  }
+
+  .navbar div {
+    gap: 3rem;
+  }
+
   .hero_content h1 {
     font-size: 6rem;
     line-height: 6.5rem;
@@ -142,11 +279,22 @@ html {
     font-size: 1.5rem;
   }
 
-  .navbar a {
-    font-size: 1.5rem;
+  .about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
-  .navbar div {
-    gap: 3rem;
+  .about_content {
+    margin: 2rem 3rem 0 3rem;
+  }
+
+  .about_content h2 {
+    font-size: 4rem;
+  }
+
+  .picturesArea {
+    height: 60vh;
+    align-self: center;
   }
 }
