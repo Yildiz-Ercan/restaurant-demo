@@ -16,6 +16,7 @@ html {
 }
 
 .container {
+  width: 85%;
   max-width: 85%;
   margin: 0 auto;
 }
@@ -26,6 +27,33 @@ html {
   text-transform: uppercase;
   border-bottom: 2px solid var(--primary-color);
   width: fit-content;
+}
+
+.button {
+  font-size: 1rem;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  color: white;
+  background-color: var(--primary-color);
+  text-decoration: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.button.button_reverse {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.button.button_reverse:hover {
+  background-color: var(--primary-color);
+  color: white;
 }
 
 main {
@@ -103,23 +131,6 @@ main {
   color: var(--text-color);
 }
 
-.button {
-  font-size: 1rem;
-  margin-top: 2rem;
-  padding: 1rem 2rem;
-  color: white;
-  background-color: var(--primary-color);
-  text-decoration: none;
-  border: 2px solid var(--primary-color);
-  border-radius: 2px;
-  transition: all 0.2s ease-in-out;
-}
-
-.button:hover {
-  background-color: transparent;
-  color: var(--primary-color);
-}
-
 .platzhalter {
   height: 300vh;
 }
@@ -127,8 +138,10 @@ main {
 .about {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 85%;
+  max-width: 85%;
   height: 100vh;
+  margin-bottom: 1rem;
 }
 
 .about_content,
@@ -163,7 +176,6 @@ main {
 .picturesArea {
   display: flex;
   flex-direction: row;
-  margin: 1rem;
   gap: 1rem;
 }
 
@@ -175,7 +187,6 @@ main {
 }
 
 .picturesArealeft {
-  display: flex;
   background-image: url("../restaurant-demo/pictures/about-1.jpg");
   background-size: cover;
   background-position: center;
@@ -196,7 +207,6 @@ main {
 }
 
 .picturesAreaRightChild1 {
-  display: flex;
   background-image: url("../restaurant-demo/pictures/about-2.jpg");
   background-size: cover;
   background-position: center;
@@ -204,7 +214,6 @@ main {
 }
 
 .picturesAreaRightChild2 {
-  display: flex;
   background-image: url("../restaurant-demo/pictures/about-3.jpg");
   background-size: cover;
   background-position: center;
@@ -251,6 +260,70 @@ main {
   text-align: right;
 }
 
+.contact {
+  width: 85%;
+  height: 65vh;
+  margin: 0 auto;
+}
+
+.contact_content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.contact_picture_wrapper,
+.contact_details {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+}
+
+.contact_picture_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contact_picture {
+  width: 100%;
+  height: 70%;
+  margin: 0;
+  background-image: url(../restaurant-demo/pictures/contact.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.contact_details {
+  margin: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.contact_details .heading {
+  font-size: 1.7rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.contact_buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact_buttons .button {
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  margin-top: 0;
+}
+
 @media only screen and (min-width: 600px) {
   .navbar a {
     font-size: 1.2rem;
@@ -274,9 +347,15 @@ main {
   }
 
   .about {
-    display: flex;
     flex-direction: row;
     align-items: center;
+  }
+
+  .about_content,
+  .picturesArea {
+    flex: 0 0 50%;
+    width: 50%;
+    min-width: 0;
   }
 
   .about_content .heading {
@@ -293,8 +372,64 @@ main {
   }
 
   .picturesArea {
-    height: 50vh;
+    height: 80%;
     align-self: center;
+  }
+
+  .contact_content {
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact_picture_wrapper {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .contact_picture {
+    width: 100%;
+    height: 70%;
+    margin: 0;
+  }
+
+  .contact_details {
+    flex: 1;
+    min-width: 0;
+    align-self: center;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0;
+    padding-left: 1rem;
+  }
+
+  .contact_details .heading {
+    font-size: 2rem;
+  }
+
+  .contact_details p {
+    font-size: 1.5rem;
+  }
+
+  .contact_buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .contact_buttons .button {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: 0;
   }
 }
 
@@ -327,7 +462,7 @@ main {
   }
 
   .about_content p {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .picturesArea {
@@ -341,5 +476,9 @@ main {
 
   .openingHours_table th {
     padding-right: 14rem;
+  }
+
+  .contact_buttons .button {
+    font-size: 1.5rem;
   }
 }
