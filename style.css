@@ -242,7 +242,9 @@ main {
 }
 
 .openingHours_table td {
+  font-variant-numeric: tabular-nums;
   color: white;
+  text-align: right;
 }
 
 .openingHours_content .closed {
