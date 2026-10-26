@@ -68,20 +68,20 @@ main {
   z-index: 10;
   background-color: #1a1a1a;
   height: 10vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.navbar div {
+.link_container {
   display: flex;
   padding: 10px;
   gap: 1rem;
 }
 
-.navbar a {
+.link_style {
   font-size: 1rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -89,7 +89,7 @@ main {
   transition: all 0.2s ease-in-out;
 }
 
-.navbar a:hover {
+.link_style:hover {
   color: var(--primary-color);
 }
 
@@ -324,12 +324,36 @@ main {
   margin-top: 0;
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2a2a;
+  height: 20vh;
+  padding-top: 2rem;
+}
+
+.footer .link_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer .link_container p {
+  flex-basis: 100%;
+  text-align: center;
+  color: white;
+}
+
 @media only screen and (min-width: 600px) {
-  .navbar a {
+  .link_style {
     font-size: 1.2rem;
   }
 
-  .navbar div {
+  .link_container {
     gap: 1.5rem;
   }
 
@@ -431,14 +455,16 @@ main {
     white-space: nowrap;
     margin-top: 0;
   }
+
+  .footer .link_container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2rem;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
-  .navbar a {
-    font-size: 1.5rem;
-  }
-
-  .navbar div {
+  .link_container {
     gap: 3rem;
   }
 
@@ -480,5 +506,13 @@ main {
 
   .contact_buttons .button {
     font-size: 1.5rem;
+  }
+
+  .footer .link_container {
+    gap: 3rem;
+  }
+
+  .footer .link_container p {
+    transform: translateY(-1rem);
   }
 }
