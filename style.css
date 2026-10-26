@@ -132,10 +132,6 @@ main {
   color: var(--text-color);
 }
 
-.platzhalter {
-  height: 300vh;
-}
-
 .about {
   display: flex;
   flex-direction: column;
@@ -262,7 +258,7 @@ main {
 
 .contact {
   width: 85%;
-  height: 65vh;
+  height: 70vh;
   margin: 0 auto;
 }
 
@@ -473,7 +469,7 @@ main {
   }
 
   .about_content .heading {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .about_content p {
